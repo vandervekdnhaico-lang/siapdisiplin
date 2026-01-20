@@ -480,7 +480,7 @@ thead th {
   position: absolute;
   inset: 0;
 
-  background: url("logo-smansa.PNG") center center no-repeat;
+  background: url("logo-smansa.png") center center no-repeat;
   background-size: 95%;   /* LOGO LEBIH BESAR */
 
   opacity: 0.13;          /* LEBIH KELIHATAN TAPI TETAP HALUS */
