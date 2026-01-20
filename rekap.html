@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekap Absensi Guru</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; padding: 20px; background-color: #f9f9f9; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #f0f0f0; }
+    .tepat { color: green; font-weight: bold; }
+    .terlambat { color: red; font-weight: bold; }
+    h2 { text-align: center; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Rekap Absensi</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Tanggal</th>
+      <th>Nama</th>
+      <th>Kelas</th>
+      <th>Jam</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="rekapBody"></tbody>
+</table>
+
+<script>
+  // Ganti URL di bawah dengan Web App terbaru dari Google Apps Script
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbyqptNgYyXKdVkMX1BSNZD1axh0XuvK9jUkzdSf_wUDjBNj9J_i4Dl0EZjfzwiEjfg/exec"
+  async function loadRekap() {
+    try {
+      const response = await fetch(webAppUrl);
+      const data = await response.json();
+
+      const tbody = document.getElementById("rekapBody");
+      tbody.innerHTML = "";
+
+      data.forEach((item, index) => {
+        const statusClass = item.status.toUpperCase() === "TEPAT WAKTU" ? "tepat" : "terlambat";
+        const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${item.tanggal}</td>
+            <td>${item.nama}</td>
+            <td>${item.kelas}</td>
+            <td>${item.jam}</td>
+            <td class="${statusClass}">${item.status.toUpperCase()}</td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      });
+
+    } catch (error) {
+      alert("Gagal memuat rekap absensi. Pastikan Web App sudah di-deploy dan URL benar.\n\nError: " + error);
+    }
+  }
+
+  // Panggil saat halaman dimuat
+  window.onload = loadRekap;
+</script>
+
+</body>
+</html>

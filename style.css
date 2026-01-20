@@ -1,0 +1,668 @@
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  background-color: #f4f6f8;
+  color: #000;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Scrollbar Light Mode */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a5b4fc;
+}
+
+/* BODY & BACKGROUND */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  background:
+    linear-gradient(
+      rgba(244, 246, 248, 0.7),
+      rgba(244, 246, 248, 0.7)
+    ),
+    url("./sekolah.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+/* CONTAINER (CARD APP) */
+.container {
+  background: #ffffff;
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 28px 24px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ANIMASI HALUS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LOGO */
+img#logoSmansa {
+  width: 195px;
+  max-width: 45%;
+  margin: 24px auto 16px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo-wrapper img {
+  width: 180px;
+  display: block;
+  transition: transform 0.3s ease;
+
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.25));
+}
+
+.logo-wrapper img:hover {
+  transform: scale(1.06);
+}
+
+/* JUDUL */
+h2, h3 {
+  margin-top: 5px;
+  margin-bottom: 18px;
+  color: #1f2937;
+}
+
+/* LABEL */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* SELECT */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1.5px solid #d0d7e2;
+  font-size: 15px;
+  background: #f9fafb;
+  color: #333;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: #fff;
+}
+
+select:disabled {
+  background: #eee;
+  color: #999;
+}
+
+/* BUTTON UTAMA (MULAI & SELESAI) */
+.btn-primary {
+  background: linear-gradient(135deg, #1e3c72, #2a6cf4);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.container select,
+.container button {
+  margin-top: 8px;
+}
+
+/* HASIL ABSENSI */
+#hasilAbsensi p {
+  text-align: left;
+  margin: 10px 0;
+  font-size: 15px;
+  color: #374151;
+}
+
+/* REKAP */
+#rekapGuru {
+  max-width: 95%;
+}
+
+/* TABEL */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background: #2563eb;
+  color: white;
+}
+
+th, td {
+  padding: 10px 6px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+tbody tr:hover {
+  background: #e0e7ff;
+}
+
+/* HILANGKAN LABEL FILTER */
+#rekapGuru label {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .container {
+    margin: 20px 12px;
+    padding: 22px 18px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}
+
+/* FIXED BACKGROUND KHUSUS LAPTOP */
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+/* === LANDING PAGE FIX === */
+.landing {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+/* HEADER FULL SAMPAI UJUNG */
+.card-header {
+  height: 125px;
+  margin-left: -24px;
+  margin-right: -24px;
+  border-radius: 18px 18px 0 0;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(30, 58, 138, 0.75),
+      rgba(37, 99, 235, 0.55),
+      rgba(255, 255, 255, 0.9)
+    );
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* GLOW PUTIH DI BAWAH HEADER */
+.card-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.45),
+    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0)
+  );
+
+  z-index: 1;
+}
+
+/* LOGO DIPERBESAR */
+.logo-wrapper {
+  width: auto;
+  height: auto;
+  background: transparent;   /* hilangkan putih */
+  border-radius: 0;          /* hilangkan bulat */
+  margin: -85px auto 14px;   /* atur jarak dari header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;          /* hilangkan bayangan */
+
+  position: relative;
+  z-index: 5;
+}
+
+.logo-wrapper img {
+  width: 180px;   /* ukuran logo */
+}
+
+/* JUDUL LEBIH RAPAT */
+.landing h2 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* SUBTITLE LEBIH DEKAT */
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* TOMBOL KEMBALI KE STYLE DEFAULT */
+.landing .btn-primary {
+  margin-top: 10px;
+  border-radius: 12px;
+}
+
+.page-form {
+  position: relative;
+  border-radius: 18px;
+  padding: 28px 24px;
+
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      135deg,
+      rgba(37,99,235,0.7),
+      rgba(147,197,253,0.4)
+    ) border-box;
+
+  border: 2px solid transparent;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* ================= REKAP ABSENSI FIX ================= */
+
+/* Card rekap tidak full layar */
+#rekapGuru {
+  margin-top: 28px;
+  max-width: 95%;
+  overflow-x: auto;
+}
+
+/* Tabel tidak keluar dari card */
+#rekapGuru table {
+  width: 100%;
+  min-width: 720px; /* biar kolom rapi */
+  table-layout: fixed;
+}
+
+/* Header tabel tetap rapi */
+#rekapGuru th {
+  white-space: nowrap;
+}
+
+/* Isi tabel turun baris jika panjang */
+#rekapGuru td {
+  word-wrap: break-word;
+}
+
+/* Scroll horizontal halus di HP */
+#rekapGuru {
+  scrollbar-width: thin;
+}
+
+/* ================= LIGHT MODE FORCE (VERSI 3) ================= */
+
+/* Elemen form selalu light */
+select,
+option,
+input,
+button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Isi tabel light */
+table,
+tbody,
+tr,
+td {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Header tabel tetap biru (aksen) */
+thead,
+thead th {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* FILE INPUT CUSTOM (SEPERTI SELECT) */
+.file-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+
+  border-radius: 10px;
+  border: 1.5px solid #d0d7e2;
+  background: #f9fafb;
+
+  font-size: 15px;
+  color: #666;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.file-wrapper:hover {
+  border-color: #2563eb;
+  background: #fff;
+}
+
+.file-wrapper input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#fileText {
+  pointer-events: none;
+}
+
+/* ===== TOMBOL AMBIL FOTO (KECIL & TANPA SHADOW) ===== */
+.btn-foto {
+  width: 100%;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+
+  /* ORANGE GELAP */
+  background: linear-gradient(135deg, #c2410c, #ea580c);
+
+  margin-bottom: 14px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Hover (tanpa shadow) */
+.btn-foto:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Saat foto SUDAH diambil → HIJAU */
+.btn-foto:disabled {
+  background: linear-gradient(135deg, #15803d, #22c55e);
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+/* ===== WATERMARK LOGO DI CARD ===== */
+.card-logo {
+  position: relative;
+  overflow: hidden;
+}
+
+/* logo transparan */
+.card-logo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("logo-smansa.PNG") center center no-repeat;
+  background-size: 95%;   /* LOGO LEBIH BESAR */
+
+  opacity: 0.13;          /* LEBIH KELIHATAN TAPI TETAP HALUS */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* pastikan isi card di atas logo */
+.card-logo > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== HASIL ABSENSI STYLE ID CARD ===== */
+.hasil-header {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.hasil-nama {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e3c72;
+  letter-spacing: 0.3px;
+
+  display: inline-block;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* garis utama + lanjutan transparan */
+.hasil-nama::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 95%;
+  height: 3px;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    to right,
+    #1e3c72 0%,
+    #2563eb 35%,
+    rgba(37, 99, 235, 0.35) 60%,
+    rgba(37, 99, 235, 0.15) 100%
+  );
+}
+
+/* info */
+.hasil-info {
+  margin-top: 14px;
+}
+
+.info-item {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #374151;
+  text-align: left;
+}
+
+.info-item .label {
+  font-weight: 600;
+  color: #374151;
+}
+
+/* titik dua otomatis */
+.info-item .label::after {
+  content: ": ";
+}
+
+/* status khusus */
+.info-item.status span:last-child {
+  font-weight: 600;
+}
+
+.info-item.status span:last-child {
+  color: #dc2626; /* default TERLAMBAT */
+}
+
+/* kalau tepat waktu */
+.tepat {
+  color: #16a34a !important;
+}
+
+/* ===== BUTTON SELESAI (LEBIH KECIL & TURUN) ===== */
+#btnSelesai {
+  margin-top: 18px;        /* jarak dari info */
+  padding: 11px;           /* lebih kecil */
+  font-size: 14px;         /* sama seperti Ambil Foto */
+  font-weight: 600;
+
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 6px 14px rgba(30, 60, 114, 0.25);
+}
+
+/* ========== ORNAMEN GEOMETRIC KANAN – HASIL ABSENSI ========== */
+
+.hasil-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* layer bawah (lebih kuat, dari bawah) */
+.hasil-card::before {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -30px;
+
+  width: 55%;
+  height: 75%;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(37,99,235,0.18),
+      rgba(37,99,235,0.10),
+      rgba(37,99,235,0.04),
+      rgba(255,255,255,0)
+    );
+
+  clip-path: polygon(
+    25% 100%,
+    100% 75%,
+    100% 0%,
+    60% 0%,
+    0% 55%
+  );
+
+  z-index: 0;
+}
+
+/* layer atas (lebih tipis & pudar) */
+.hasil-card::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 40px;
+
+  width: 45%;
+  height: 60%;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(30,58,138,0.22),
+      rgba(37,99,235,0.10),
+      rgba(255,255,255,0)
+    );
+
+  clip-path: polygon(
+    35% 100%,
+    100% 80%,
+    100% 0%,
+    65% 0%,
+    10% 60%
+  );
+
+  z-index: 0;
+}
+
+/* pastikan isi tetap di atas */
+.hasil-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hasil-card {
+  animation: cardEnter 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Absensi Upacara Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PAKSA MODE TERANG -->
+  <meta name="color-scheme" content="light">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HALAMAN 1 -->
+<div class="container landing" id="halamanAwal">
+
+  <div class="card-header"></div>
+
+  <div class="logo-wrapper">
+    <img src="logo-smansa.png" alt="Logo SMANSA">
+  </div>
+
+  <h2>ABSENSI UPACARA</h2>
+  <p class="subtitle">Sistem Absensi Digital SMAN 1 Biau</p>
+
+  <button class="btn-primary" onclick="mulaiAbsensi()">
+    Mulai Absensi
+  </button>
+
+</div>
+
+<!-- HALAMAN 2 -->
+<div class="container page-form card-logo" id="formAbsensi" style="display:none;">
+  <h3>Form Absensi</h3>
+
+  <label>Kelas</label>
+  <select id="kelasSelect">
+    <option value="">Pilih Kelas</option>
+  </select>
+
+  <label>Nama</label>
+  <select id="namaSelect" disabled>
+    <option value="">Pilih Nama</option>
+  </select>
+
+  <div class="form-group">
+  <label>Foto Kehadiran</label>
+
+  <input
+    type="file"
+    id="fotoAbsen"
+    accept="image/*"
+    capture="user"
+    hidden
+  >
+
+  <button type="button" id="btnKamera" class="btn-foto">
+    📸 Ambil Foto
+  </button>
+</div>
+
+  <button id="absenBtn" class="btn-primary">Kirim Absensi</button>
+</div>
+
+<!-- HALAMAN 3 -->
+<div class="container page-form hasil-card" id="hasilAbsensi" style="display:none;">
+  
+  <div class="hasil-header">
+    <div class="hasil-nama" id="hasilNama"></div>
+    <div class="hasil-divider"></div>
+  </div>
+
+  <div class="hasil-info">
+    <div class="info-item">
+      <span class="label">Kelas</span>
+      <span id="hasilKelas"></span>
+    </div>
+
+    <div class="info-item">
+      <span class="label">Jam</span>
+      <span id="hasilJam"></span>
+    </div>
+
+    <div class="info-item status">
+      <span class="label">Status</span>
+      <span id="hasilStatus"></span>
+    </div>
+  </div>
+
+  <button id="btnSelesai" class="btn-primary">Selesai</button>
+</div>
+
+<!-- REKAP (TERSEMBUNYI TOTAL) -->
+<div class="container page-form" id="rekapGuru" style="display:none;">
+  <h3>Rekap Absensi</h3>
+
+  <label>Filter Kelas</label>
+  <select id="filterKelas" onchange="tampilkanRekap(this.value)"></select>
+
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Tanggal</th>
+        <th>Nama</th>
+        <th>Kelas</th>
+        <th>Jam</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="rekapBody"></tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  document.documentElement.style.colorScheme = "light";
+</script>
+
+</body>
+</html>

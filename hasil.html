@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Absensi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h3>Hasil Absensi</h3>
+    <div id="hasil"></div>
+    <button onclick="location.href='form.html'">Kembali ke Form</button>
+  </div>
+
+  <script>
+    const data = JSON.parse(sessionStorage.getItem("absenHariIni"));
+    if(data) {
+      const warnaStatus = data.status === "TEPAT WAKTU" ? "green" : "red";
+      document.getElementById("hasil").innerHTML = `
+        <p><b>Nama:</b> ${data.nama}</p>
+        <p><b>Kelas:</b> ${data.kelas}</p>
+        <p><b>Jam:</b> ${data.jam}</p>
+        <p><b>Status:</b> <span style="color:${warnaStatus}; font-weight:bold;">${data.status}</span></p>
+      `;
+    } else {
+      document.getElementById("hasil").innerHTML = "<p>Data absensi tidak ditemukan.</p>";
+    }
+  </script>
+</body>
+</html>
