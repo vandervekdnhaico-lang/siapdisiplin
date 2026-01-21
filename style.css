@@ -39,23 +39,29 @@ html, body {
 }
 
 body {
+  min-height: 100vh;
+  
   background:
     linear-gradient(
-      rgba(244, 246, 248, 0.7),
-      rgba(244, 246, 248, 0.7)
+      rgba(244, 246, 248, 0.35),
+      rgba(244, 246, 248, 0.35)
     ),
     url("sekolah.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* CONTAINER (CARD APP) */
 .container {
   background: #ffffff;
   max-width: 420px;
-  margin: 30px auto;
+  width: 100%;
+  margin: 40px 16px;
   padding: 28px 24px;
   border-radius: 18px;
   text-align: center;
